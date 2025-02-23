@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Glow Skincare</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <h1>Glow</h1>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="cart.html">🛒 Cart (<span id="cart-count">0</span>)</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?w=400&q=80" alt="Vitamin C Serum">
+                <h3>Vitamin C Serum</h3>
+                <p class="product-description">Brightening & Anti-aging</p>
+                <p>$39.99</p>
+                <button onclick="addToCart('Vitamin C Serum', 39.99)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?w=400&q=80" alt="Hyaluronic Acid">
+                <h3>Hyaluronic Acid</h3>
+                <p class="product-description">Deep Hydration Serum</p>
+                <p>$29.99</p>
+                <button onclick="addToCart('Hyaluronic Acid', 29.99)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="./images/nightcream.jpg" alt="Retinol Cream">
+                <h3>Retinol Cream</h3>
+                <p class="product-description">Anti-aging Night Treatment</p>
+                <p>$45.99</p>
+                <button onclick="addToCart('Retinol Cream', 45.99)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&q=80" alt="Skincare Set">
+                <h3>Complete Skincare Set</h3>
+                <p class="product-description">Daily Essentials Kit</p>
+                <p>$99.99</p>
+                <button onclick="addToCart('Complete Skincare Set', 99.99)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="./images/cream.jpg" alt="Night Repair Cream">
+                <h3>Night Repair Cream</h3>
+                <p class="product-description">Intensive Recovery Formula</p>
+                <p>$45.99</p>
+                <button onclick="addToCart('Night Repair Cream', 45.99)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=400&q=80" alt="Niacinamide Serum">
+                <h3>Niacinamide Serum</h3>
+                <p class="product-description">Pore Minimizing Formula</p>
+                <p>$34.99</p>
+                <button onclick="addToCart('Niacinamide Serum', 34.99)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=400&q=80" alt="Gentle Cleanser">
+                <h3>Gentle Cleanser</h3>
+                <p class="product-description">For All Skin Types</p>
+                <p>$24.99</p>
+                <button onclick="addToCart('Gentle Cleanser', 24.99)">Add to Cart</button>
+            </div>
+           
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?w=400&q=80" alt="Moisturizing Sunscreen">
+                <h3>Moisturizing Sunscreen</h3>
+                <p class="product-description">SPF 50+ Protection</p>
+                <p>$27.99</p>
+                <button onclick="addToCart('Moisturizing Sunscreen', 27.99)">Add to Cart</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Glow Skincare. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

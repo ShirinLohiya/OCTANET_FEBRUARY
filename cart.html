@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <h1>Shopping Cart</h1>
+        <div class="cart-icon">
+            <a href="index.html">← Back to Shop</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="cart-container">
+            <div id="cart-items">
+                <!-- Cart items will be inserted here -->
+            </div>
+            
+            <div class="cart-summary">
+                <h3>Order Summary</h3>
+                <div class="summary-item">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">$0.00</span>
+                </div>
+                <div class="summary-item">
+                    <span>Delivery Charge:</span>
+                    <span id="delivery">$5.00</span>
+                </div>
+                <div class="summary-item total">
+                    <span>Total:</span>
+                    <span id="total">$0.00</span>
+                </div>
+                <a href="payment.html" ><button onclick="proceedToPayment()" class="checkout-btn">Proceed to Payment</button></a>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

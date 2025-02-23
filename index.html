@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow - Premium Skincare</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <h1>Glow</h1>
+        <div class="nav-links">
+            <a href="shop.html">Shop</a>
+            <a href="cart.html">🛒 Cart (<span id="cart-count">0</span>)</a>
+            <button onclick="showLoginForm()" class="auth-btn">Login</button>
+            <button onclick="showSignupForm()" class="auth-btn signup">Sign Up</button>
+        </div>
+    </nav>
+
+    <!-- Auth Modal -->
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            
+            <!-- Login Form -->
+            <form id="login-form" class="auth-form" onsubmit="handleLogin(event)">
+                <h2>Login</h2>
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button type="submit" class="auth-submit">Login</button>
+                <p class="form-switch">
+                    Don't have an account? 
+                    <a href="#" onclick="switchForm('signup')">Sign Up</a>
+                </p>
+            </form>
+
+            <!-- Signup Form -->
+            <form id="signup-form" class="auth-form" onsubmit="handleSignup(event)">
+                <h2>Create Account</h2>
+                <div class="form-group">
+                    <label for="signup-name">Full Name</label>
+                    <input type="text" id="signup-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" required minlength="6">
+                </div>
+                <div class="form-group">
+                    <label for="signup-confirm">Confirm Password</label>
+                    <input type="password" id="signup-confirm" required minlength="6">
+                </div>
+                <button type="submit" class="auth-submit">Sign Up</button>
+                <p class="form-switch">
+                    Already have an account? 
+                    <a href="#" onclick="switchForm('login')">Login</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Radiant Skin Begins Here</h1>
+            <p>Discover premium skincare products for your daily glow-up routine</p>
+            <a href="shop.html" class="cta-button">Shop Now</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="features">
+            <div class="feature-card">
+                <span class="feature-icon">🌿</span>
+                <h3>Natural Ingredients</h3>
+                <p>Clean, effective formulas</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🧪</span>
+                <h3>Dermatologist Tested</h3>
+                <p>Safe for all skin types</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🌍</span>
+                <h3>Eco-Friendly</h3>
+                <p>Sustainable packaging</p>
+            </div>
+        </section>
+
+        <section class="latest-products">
+            <h2>Latest Arrivals</h2>
+            <div class="products-preview">
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?w=400&q=80" alt="Vitamin C Serum">
+                    <h3>Vitamin C Serum</h3>
+                    <p>$39.99</p>
+                    <button onclick="addToCart('Vitamin C Serum', 39.99)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?w=400&q=80" alt="Hyaluronic Acid">
+                    <h3>Hyaluronic Acid</h3>
+                    <p>$29.99</p>
+                    <button onclick="addToCart('Hyaluronic Acid', 29.99)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1617897903246-719242758050?w=400&q=80" alt="Retinol Cream">
+                    <h3>Retinol Cream</h3>
+                    <p>$45.99</p>
+                    <button onclick="addToCart('Retinol Cream', 45.99)">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="special-offers">
+            <h2>Special Offers</h2>
+            <div class="offers-grid">
+                <div class="offer-card">
+                    <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&q=80" alt="Skincare Set">
+                    <div class="offer-content">
+                        <h3>Complete Skincare Set</h3>
+                        <p class="price"><span class="original">$129.99</span> <span class="discount">$99.99</span></p>
+                        <button onclick="addToCart('Complete Skincare Set', 99.99)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <img src="./images/nightcream.jpg" alt="Night Repair Cream">
+                    <div class="offer-content">
+                        <h3>Night Repair Cream</h3>
+                        <p class="price"><span class="original">$59.99</span> <span class="discount">$45.99</span></p>
+                        <button onclick="addToCart('Night Repair Cream', 45.99)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="newsletter">
+            <div class="newsletter-content">
+                <h2>Join the Glow Community</h2>
+                <p>Subscribe to receive skincare tips, exclusive offers, and new product alerts!</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Glow</h3>
+                <p>Premium skincare products made with natural ingredients for your daily beauty routine.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="shop.html">Shop All</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Customer Care</h3>
+                <ul>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Track Order</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">Pinterest</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Glow Skincare. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
